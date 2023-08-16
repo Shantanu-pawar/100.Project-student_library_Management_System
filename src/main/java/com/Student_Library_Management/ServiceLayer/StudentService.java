@@ -22,7 +22,7 @@ public class StudentService {
         card.setCardStatus(CardStatus.ACTIVATED); // and set card status
         card.setStudent(student); // [This is foreign key attribute]
 
-        // now we've to set the card
+        // now we've to set the card whenever we save student.
         student.setCard(card);
 
         // now if we're saving student then card is also get automatically saved.

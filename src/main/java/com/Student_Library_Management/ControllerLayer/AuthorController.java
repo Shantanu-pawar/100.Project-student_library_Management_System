@@ -1,24 +1,23 @@
 package com.Student_Library_Management.ControllerLayer;
 
-
-import com.Student_Library_Management.Models.Student;
-import com.Student_Library_Management.ServiceLayer.StudentService;
+import com.Student_Library_Management.Models.Author;
+import com.Student_Library_Management.ServiceLayer.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
-@RequestMapping("student")
-public class StudentController {
+@RequestMapping("author")
+public class AuthorController {
 
     @Autowired
-    StudentService studentService;
+    AuthorService authorService;
 
     @PostMapping("/add")
-    public String addStudent(@RequestBody Student student){
-        return studentService.addStudent(student);
+    public String addAuthor(@RequestBody Author author){
+        return authorService.addAuthor(author);
     }
+
 }
