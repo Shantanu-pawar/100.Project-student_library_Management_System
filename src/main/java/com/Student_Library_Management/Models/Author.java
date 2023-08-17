@@ -24,7 +24,7 @@ public class Author {
 
     private int age;
     private String country;
-
+    private String rating;
 
     @OneToMany(mappedBy = "author" , cascade = CascadeType.ALL)
 //    since we're taking oneTo many that's why we've to use list
@@ -34,10 +34,11 @@ public class Author {
 
     public Author(){}
 
-    public Author(int id, String name, int age, String country) {
+    public Author(int id, String name, int age, String country, String rating) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.country = country;
+        this.rating = rating;
     }
 }

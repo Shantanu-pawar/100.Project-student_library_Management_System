@@ -1,7 +1,7 @@
 package com.Student_Library_Management.ControllerLayer;
 
-import com.Student_Library_Management.Models.Author;
-import com.Student_Library_Management.ServiceLayer.AuthorService;
+import com.Student_Library_Management.Models.Book;
+import com.Student_Library_Management.ServiceLayer.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/author")
-public class AuthorController {
+@RequestMapping("/book")
+public class BookController {
 
     @Autowired
-    AuthorService authorService;
+    BookService bookService;
 
     @PostMapping("/add")
-    public String addAuthor(@RequestBody Author author){
-        return authorService.addAuthor(author);
+    public String addBook(@RequestBody Book book){
+        return bookService.addBook(book);
     }
-
 }

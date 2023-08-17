@@ -22,6 +22,8 @@ public class Book {
     @Enumerated(value=EnumType.STRING) //For Creating Genre we've created it's ENUMS
     private Genre genre;
 
+    private boolean issued;
+
 //    mapping : author is to book
     //[We're setting Foreign key here] book is child with respective to author -
     @ManyToOne
