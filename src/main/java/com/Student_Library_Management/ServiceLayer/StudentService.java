@@ -28,7 +28,12 @@ public class StudentService {
         // now if we're saving student then card is also get automatically saved.
         studentRepository.save(student);
 
-
         return "student and card added successfully.";
     }
+
+    public String findNameByEmail(String email){
+        Student student = studentRepository.findByEmail(email);
+        return student.getName();
+    }
+
 }

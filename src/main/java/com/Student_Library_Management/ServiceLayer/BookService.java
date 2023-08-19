@@ -29,21 +29,21 @@ public class BookService {
 //     Practice : write exception handling here:
 //        -------------
 
+        // basic attribute's are already set
+        // now here setting up foreign key attribute in child class
         book.setAuthor(author);
-        List<Book> currentBookWritten = author.getBooksWritten();
+
+        List<Book> currentBookWritten = author.getBooksWritten(); // we've to update the list of books in parent class.
         currentBookWritten.add(book);
         author.setBooksWritten(currentBookWritten);
+
+        authorRepository.save(author); // .save function works as update & save function
+        return "Book added Successfully";
 
         //LOGIC : what we're doing here ?  -
         // first fetch the particular author name from our author list - [exception : if author not found then we've to register author first]
         // then in that list add the particular book with author
         // and now just return this list.
-
-
-        // now we've to updated our author entity.. cause we just added book for that particular author
-        authorRepository.save(author); // .save function works as update function also
-
-        return "Book added Successfully";
 
 /*
 this is the request in postman to add book [using author id] - used here author as object

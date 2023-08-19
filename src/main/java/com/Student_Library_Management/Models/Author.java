@@ -27,8 +27,7 @@ public class Author {
     private String rating;
 
     @OneToMany(mappedBy = "author" , cascade = CascadeType.ALL)
-//    since we're taking oneTo many that's why we've to use list
-    private List<Book> booksWritten = new ArrayList<>();
+    private List<Book> booksWritten = new ArrayList<>(); // we're taking the books count for perticular author
 
 //    if it's one to one then we'll choose to write [private Book book;]
 

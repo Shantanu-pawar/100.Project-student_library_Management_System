@@ -14,7 +14,7 @@ public class Student {
 
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     private int age;
